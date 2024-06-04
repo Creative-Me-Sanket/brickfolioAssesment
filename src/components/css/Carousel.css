@@ -1,0 +1,21 @@
+.carousel-container {
+    width: 100%;
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .carousel-content {
+    display: inline-block;
+  }
+  
+  .card {
+    width: 300px;
+    height: 200px;
+    margin-right: 20px; 
+    background-color: #ccc; 
+    display: inline-block;
+    border-radius: 2em;
+    cursor: pointer;
+  }
+  
