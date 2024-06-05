@@ -61,7 +61,8 @@ export const chTheme = extendTheme({
 
     Text : {
       baseStyle : {
-        color : "#ff5821",
+        // color : "#ff5821",
+        color : "#766F6F",
         fontWeight: "700",
         fontSize : "18px",
         transition: "color 0.2s",

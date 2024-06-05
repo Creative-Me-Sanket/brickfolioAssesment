@@ -51,7 +51,11 @@ const Carousel = ({ children }) => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <div className="carousel-content">{children}</div>
+      <div className="carousel-content">
+      <Flex gap="3em">
+      {children}
+      </Flex>
+        </div>
     </div>
     </Flex>
   );
