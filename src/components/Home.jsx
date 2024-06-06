@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
 import Hero from './Hero'
 import Banner from './Banner'
 import Carousel from './Carousel'
@@ -53,7 +52,6 @@ const Home = () => {
       ];
   return (
     <>
-    {/* <Navbar /> */}
     <Hero />
     <Banner />
     <Carousel>

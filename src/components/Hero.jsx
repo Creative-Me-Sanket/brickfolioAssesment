@@ -1,11 +1,12 @@
 import { Box, Button, Flex, Stack, Text, VStack } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import brandImage from "../assets/heroBackground.jpg"
 import whiteLogo from "../assets/whiteLogo.png"
 import CustomInput from './CustomInput'
 import { SearchIcon } from '@chakra-ui/icons'
 
 const Hero = () => {
+
   return (
     <Flex
       w={'full'}
@@ -35,6 +36,7 @@ const Hero = () => {
                 width="142px"
                 _hover={{ bg: 'whiteAlpha.500' }}
                 leftIcon={<SearchIcon />}
+                onClick={() => alert("Welcome To Brickfolio")}
               >
                 Search
               </Button>

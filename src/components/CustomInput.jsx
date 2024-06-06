@@ -30,26 +30,6 @@ const CustomInput = () => {
         mx={2}
       />
       <CustomSelect />
-      {/* <Select
-        placeholder="Residential"
-        width="50%"
-        size="md"
-        border="none"
-        _focus={{
-            border:"none",
-            outline:"none",
-            boxShadow:"none"
-        }}
-        _active={{
-            border:"none",
-            outline:"none",
-            boxShadow:"none"
-        }}
-      >
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </Select> */}
     </Flex>
   );
 };

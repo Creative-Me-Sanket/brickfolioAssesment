@@ -1,83 +1,71 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
+  ChakraProvider,
   Box,
-  Button,
-  Flex,
-  Input,
   Menu,
   MenuButton,
-  MenuItem,
   MenuList,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  RadioGroup,
-  Radio,
-  Text,
-} from "@chakra-ui/react";
+  MenuItem,
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton
+} from '@chakra-ui/react';
 
 const CustomSelect = () => {
-  const [selectedOption, setSelectedOption] = useState("Residential");
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedCommercialOption, setSelectedCommercialOption] = useState("");
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState('Residential');
 
-  const handleOptionChange = (option) => {
-    setSelectedOption(option);
-    if (option === "Commercial") {
-      setModalOpen(true);
-    } else {
-      setModalOpen(false);
-    }
+  const handleSelect = (value) => {
+    localStorage.setItem("SELECTED_OPTION",value)
+    setSelectedValue(value);
+    setIsPopoverOpen(false);
   };
-
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
-
-  const handleCommercialOptionChange = (event) => {
-    setSelectedCommercialOption(event);
-    setSelectedOption(event);
-    setModalOpen(false);
-  };
-  
 
   return (
-    <Flex alignItems="center">
-      <Menu>
-        <MenuButton as={Button} mr={4} bg="transparent" _hover={{bg:"transparent"}} _active={{bg:"transparent"}}>
-          {selectedOption}
-        </MenuButton>
-        <MenuList>
-          <MenuItem onClick={() => handleOptionChange("Residential")}>Residential</MenuItem>
-          <MenuItem onClick={() => handleOptionChange("Commercial")}>Commercial</MenuItem>
-        </MenuList>
-      </Menu>
-      <Modal isOpen={modalOpen} onClose={handleModalClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader textAlign="center">Choose Commercial Option</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <RadioGroup onChange={(e) => handleCommercialOptionChange(e)}>
-                <Flex direction="column">
-                <Radio value="Leasing">Leasing</Radio>
-              <Radio value="Preleasing">Preleasing</Radio>
-              <Radio value="Outright">Outright</Radio>
-                </Flex>
-            </RadioGroup>
-          </ModalBody>
-          <ModalFooter>
-            <Button bg="#F2833E" color="#ffffff" onClick={handleModalClose}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </Flex>
+    <ChakraProvider>
+      <Box>
+        <Menu>
+          <MenuButton as={Button} background="transparent" _hover={{background:"transparent"}}>
+            {selectedValue}
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={() => handleSelect('Residential')}>Residential</MenuItem>
+            <MenuItem
+              onMouseEnter={() => setIsPopoverOpen(true)}
+              onMouseLeave={() => setIsPopoverOpen(false)}
+            >
+              <Box position="relative">
+                Commercial
+                {isPopoverOpen && (
+                  <Popover
+                    isOpen={isPopoverOpen}
+                    onClose={() => setIsPopoverOpen(false)}
+                    placement="right-start"
+                  >
+                    <PopoverTrigger>
+                      <Box display="inline-block" width="0" height="0" />
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <PopoverArrow />
+                      <PopoverCloseButton />
+                      <PopoverBody>
+                        <MenuItem onClick={() => handleSelect('Leasing')}>Leasing</MenuItem>
+                        <MenuItem onClick={() => handleSelect('Preleasing')}>Preleasing</MenuItem>
+                        <MenuItem onClick={() => handleSelect('Outright')}>Outright</MenuItem>
+                      </PopoverBody>
+                    </PopoverContent>
+                  </Popover>
+                )}
+              </Box>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      </Box>
+    </ChakraProvider>
   );
 };
 

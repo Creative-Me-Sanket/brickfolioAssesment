@@ -10,9 +10,9 @@ const Showcase = () => {
       <Flex alignItems="center" justifyContent="center" direction="column" gap="2em">
         <Flex>
           <Text fontSize="36px" color="#766F6F">
-            Brickfolio's Showcase of{" "}
+            Brickfolio's Showcase of &nbsp;{" "}
           </Text>
-          <Text fontSize="36px">
+          <Text fontSize="36px" color="#F2833E">
             Dream Homes{" "}
           </Text>
         </Flex>
@@ -41,7 +41,9 @@ const Showcase = () => {
                   VTP LUXE Flamante
                 </Text>
                 <Text color="#ffffff">New Property Launch by VTP</Text>
-                <Button>Know More</Button>
+                <Button
+                onClick={() => alert("Welcome To Brickfolio")}
+                >Know More</Button>
               </Flex>
               <img
                 src={vtpBanner}

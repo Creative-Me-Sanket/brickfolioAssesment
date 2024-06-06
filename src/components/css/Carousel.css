@@ -1,6 +1,6 @@
 .carousel-container {
     width: 100%;
-    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    overflow-x: hidden; 
     white-space: nowrap;
     position: relative;
   }

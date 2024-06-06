@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./css/Carousel.css";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import {  Flex, Text } from "@chakra-ui/react";
 
 const Carousel = ({ children }) => {
   const containerRef = useRef(null);
@@ -39,9 +39,9 @@ const Carousel = ({ children }) => {
     <Flex direction="column" alignItems="center" gap="2em" height="380px" padding="1em 1em" justifyContent="space-evenly">
     <Flex> 
     <Text fontSize="36px" color="#766F6F" >
-    Elevate Your Lifestyle with{" "}
+    Elevate Your Lifestyle with &nbsp;{" "}
       </Text>
-    <Text fontSize="36px">
+    <Text fontSize="36px" color="#F2833E">
     Trending Projects{" "}
       </Text>
     </Flex>

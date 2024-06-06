@@ -75,6 +75,7 @@ const PropertyCard = () => {
             <Button
             borderRadius="2em"
             color="#ff5821"
+            onClick={() => alert("Welcome To Brickfolio")}
             >
                 Know More
             </Button>
