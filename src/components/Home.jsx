@@ -9,6 +9,8 @@ import cardTwo from "../assets/cardTwo.png"
 import cardThree from "../assets/cardThree.png"
 import Showcase from './Showcase'
 import Footer from './Footer'
+import { Branding } from './Branding'
+import Achievements from './Achievements'
 
 const Home = () => {
     const imageUrls = [
@@ -60,6 +62,8 @@ const Home = () => {
       ))}
     </Carousel>
     <Showcase />
+    <Branding />
+    <Achievements />
     <Footer />
     </>
   )

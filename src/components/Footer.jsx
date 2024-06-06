@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <Box as="footer" bg="#ffffff" color="#949490" py="6">
+    <Box as="footer" bg="#ffffff" color="#949490" py="6" marginTop="4em">
       <Flex justify="space-between" mx="auto" maxW="1200px" px="4">
         {/* Section 1 */}
         <Box>

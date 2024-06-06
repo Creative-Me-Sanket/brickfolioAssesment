@@ -6,8 +6,7 @@ import PropertyCard from './PropertyCard';
 
 const Showcase = () => {
   return (
-    <>
-      <Flex alignItems="center" justifyContent="center" direction="column" gap="2em">
+      <Flex alignItems="center" justifyContent="center" direction="column" gap="2em" marginTop="4em">
         <Flex>
           <Text fontSize="36px" color="#766F6F">
             Brickfolio's Showcase of &nbsp;{" "}
@@ -62,7 +61,7 @@ const Showcase = () => {
           </GridItem>
         </Grid>
       </Flex>
-    </>
+
   );
 };
 
